@@ -1,53 +1,64 @@
-*{
-  margin:0;
-  padding:0;
-font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   background-image: url("https://images.deepai.org/art-image/970a02f3011b4cc1b9249a5c0fabe35a/create-an-image-of-the-earth-with-a-whimsical_BjuJoCM.jpg");
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  height: 100vh; 
-  width: 100vw; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex; /* Ensure body acts as a flex container */
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
 }
 
 .container {
- display: flex;
- flex-direction: column;
- align-items: center;
-}
-.app{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(243, 241, 241, 0.5); 
-  backdrop-filter: blur(5px); 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 500px; /* Adjust as needed */
+  padding: 20px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(243, 241, 241, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   padding: 20px;
   height: auto;
-  min-width: 400px;
+  width: 100%;
+  max-width: 400px; /* Constrain the size */
   font-size: larger;
   border-radius: 30px;
 }
-.heading{
+
+.heading {
   margin-bottom: 40px;
-  font-size: 50px
+  font-size: 50px;
+  text-align: center;
 }
 
 .input {
   margin-bottom: 10px;
   border-radius: 5px;
-  width:70%;
-  border-color: rgb(247, 250, 251);
+  width: 70%;
+  border: 1px solid rgb(247, 250, 251);
   outline: none;
   padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.898); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.submitbtn{
+.submitbtn {
   background-color: rgb(20, 238, 238);
   padding: 10px;
   font-size: medium;
@@ -55,10 +66,61 @@ body {
   margin-top: 30px;
   border: none;
   cursor: pointer;
-  
 }
 
-.info{
+.info {
   margin-top: 30px;
+}
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+    font-size: medium;
+    border-radius: 20px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .input {
+    width: 80%;
+  }
+
+  .submitbtn {
+    padding: 8px;
+    font-size: small;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column; /* Optional for better alignment on mobile */
+  }
+
+  .container {
+    justify-content: center; /* Ensures the container is vertically centered */
+    align-items: center; /* Ensures the container is horizontally centered */
+  }
+
+  .app {
+    padding: 10px;
+    font-size: small;
+    border-radius: 15px;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+
+  .input {
+    width: 90%;
+    font-size: small;
+  }
+
+  .submitbtn {
+    padding: 6px;
+    font-size: smaller;
+  }
 }
